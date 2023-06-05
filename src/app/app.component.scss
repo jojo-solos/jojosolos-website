@@ -1,0 +1,39 @@
+.background {
+    font-family: 'Courier New', Courier, monospace;
+    color:white;
+    // cursor: url('/assets/cursor.png'),auto;
+}
+
+.typing-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+.button-container {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.button-toaster {
+    font-family: 'Poppins', sans-serif;
+    border-radius: 2px;
+    border: 2px solid rgb(255, 182, 182);
+    background-color: rgb(255, 182, 182);
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    padding: 20px, 20px;
+}
+
+.game-img {
+    position: absolute;
+}

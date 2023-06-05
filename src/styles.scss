@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+html { 
+    height: 100%;
+    background-color: black;
+    cursor: url('/assets/cursor.png'),auto;
+    font-family: 'Poppins', sans-serif;
+}
+
+img:hover {
+    cursor: url('/assets/cursor-hover.png'),auto;
+}
+
+button:hover {
+    cursor: url('/assets/cursor-hover.png'),auto;
+}
