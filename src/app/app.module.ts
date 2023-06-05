@@ -12,9 +12,11 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     RouterModule.forRoot([
-      {path: '', redirectTo: '/', pathMatch: 'full'},
-      {path: '**', component: AppComponent}
-    ]),
+      {path: 'home', component: AppComponent},
+      // {path: '', redirectTo: '/', pathMatch: 'full', component: AppComponent},
+      {path: '**', redirectTo:'/home'}
+    ] //, { useHash: true }
+    ),
     AppRoutingModule
   ],
   providers: [],
