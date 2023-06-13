@@ -1,17 +1,17 @@
-<section class="background">
-  <!-- <a href="https://www.twitch.tv/jojosolos">
-    <img src="/assets/toasty.png" alt="meow" width="500px">
-  </a> -->
-  <div id="myIntro" class="typing-container">
-    <h1>toaster goes <span class="auto-type"></span></h1>
+<!-- <div class="background">
+  <div class="typing-container">
+    <h1 [hidden]="!this.continuePlaying" id="myIntro">toaster goes <span class="auto-type"></span></h1>
+    <h1 [hidden]="this.continuePlaying" id="myLink">check me out at twitch.tv/<span class="auto-type-link"></span></h1>
   </div>
-  <div id="myLink" class="typing-container">
-    <h1>check me out at twitch.tv/<span class="auto-type-link"></span></h1>
-  </div>
-  <!-- <div class="button-container">
-    <form action="https://www.twitch.tv/jojosolos/">
-      <button class="button-toaster">click to find toaster</button>
-    </form>
-  </div> -->
   <img class="game-img" width="100px" id="myImage" src="/assets/toasty.png" (click)="moveImage()">
-</section>
+
+  <div class="">
+    <img width="200px" id="merch-button" src="/assets/merch_button.png">
+    <img width="290px" id="game-button" src="/assets/game_button.png">
+  
+  </div>
+</div> -->
+
+<!-- <app-home *ngIf="this.gaming"></app-home>
+<app-click-game *ngIf="!this.gaming"></app-click-game> -->
+<router-outlet></router-outlet>

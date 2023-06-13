@@ -5,15 +5,20 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ClickGameComponent } from './click-game/click-game.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ClickGameComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot([
-      {path: 'home', component: AppComponent},
+      {path: 'home', component: HomeComponent},
+      {path: 'game', component: ClickGameComponent},
       // {path: '', redirectTo: '/', pathMatch: 'full', component: AppComponent},
       {path: '**', redirectTo:'/home'}
     ]),

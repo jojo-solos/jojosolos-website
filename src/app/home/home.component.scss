@@ -1,0 +1,28 @@
+.background {
+    font-family: 'Courier New', Courier, monospace;
+    color:white;
+    // cursor: url('/assets/cursor.png'),auto;
+}
+
+.typing-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+.buttons {
+    text-align: center;
+}
+
+.select-button {
+    padding: 10px;
+    rotate: -8;
+}
+
+.select-button:hover {
+    padding: 10px;
+    transform: (rotate(5deg));
+}
