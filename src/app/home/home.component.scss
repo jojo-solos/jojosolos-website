@@ -19,10 +19,49 @@
 
 .select-button {
     padding: 10px;
-    rotate: -8;
 }
 
 .select-button:hover {
     padding: 10px;
+    transform: (rotate(3deg));
+}
+
+#twitch-logo.select-button { 
+    padding: 10px;
+    transform: (rotate(-3deg));
+}
+
+#twitch-logo.select-button:hover {
+    padding: 10px;
     transform: (rotate(5deg));
+}
+
+#youtube-logo.select-button { 
+    padding: 10px;
+    transform: (rotate(2deg));
+}
+
+#youtube-logo.select-button:hover {
+    padding: 10px;
+    transform: (rotate(-4deg));
+}
+
+#youtube-vods-logo.select-button { 
+    padding: 10px;
+    transform: (rotate(-4deg));
+}
+
+#youtube-vods-logo.select-button:hover {
+    padding: 10px;
+    transform: (rotate(5deg));
+}
+
+#twitter-logo.select-button { 
+    padding: 10px;
+    transform: (rotate(1deg));
+}
+
+#twitter-logo.select-button:hover {
+    padding: 10px;
+    transform: (rotate(-2deg));
 }

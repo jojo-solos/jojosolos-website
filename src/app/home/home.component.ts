@@ -1,5 +1,8 @@
 import { Component, HostListener } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
+import { ActivatedRoute, Router } from '@angular/router';
 import  Typed  from 'typed.js';
+import { ClickGameComponent } from '../click-game/click-game.component';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +11,7 @@ import  Typed  from 'typed.js';
 })
 
 export class HomeComponent {
-  title = 'jojosolos-website';
+  // title = 'jojosolos-website';
   image:any;
   link:any;
   intro:any;
@@ -19,7 +22,7 @@ export class HomeComponent {
   clicks:any;
   continuePlaying:Boolean = true;
 
-  constructor() {
+  constructor(private route: ActivatedRoute, private router: Router,private title: Title, private meta: Meta) {
 
   }
 
@@ -38,50 +41,40 @@ export class HomeComponent {
       loop: true
     });
 
-    this.image = document.getElementById("myImage");
-    this.link = document.getElementById("myLink");
-    this.intro = document.getElementById("myIntro");
-    // this.link.style.visibility = 'hidden';
-
-    this.moveImage();
-
-    this.insideHeight = window.innerHeight;
-    this.insideWidth = window.innerWidth;
-
-    this.clicks = 0;
+    this.title.setTitle("jojosolos website");
+    this.meta.updateTag({name: "description", content: "The official jojosolos website, a central landing page where you can find links to anything jojosolos related!"});
   }
 
-  moveImage() {
-    if(this.clicks == 10) {
-      window.open("https://www.twitch.tv/jojosolos");
-      this.stopPlaying();
+  merchClicked() {
+    window.open("https://jojosolos-shop.fourthwall.com/");
+  }
+
+  gameClicked() {
+    this.router.navigateByUrl("/game");
+  }
+
+  mediaClicked(type: any) {
+    switch(type) {
+      case 'twitch': {
+        window.open("https://twitch.tv/jojosolos");
+        break;
+      }
+      case 'youtube': {
+        window.open("https://youtube.com/@jojosolos");
+        break;
+      }
+      case 'youtube_vods': {
+        window.open("https://youtube.com/@jojosolosVODS");
+        break;
+      }
+      case 'twitter': {
+        window.open("https://twitter.com/jojosoIos");
+        break;
+      }
+      default: {
+        break;
+      }
     }
-
-    var x = Math.floor(Math.random() * this.insideWidth) - 75;
-    var y = Math.floor(Math.random() * this.insideHeight) - 120;
-
-    console.log("x: ", x, " y: ", y);
-
-    if(this.image != null) {
-      this.image.style.top =  y + "px";
-      this.image.style.left = x + "px";
-    }
-    this.clicks++;
-  }
-
-  stopPlaying() {
-    this.continuePlaying = false;
-
-    this.image.style.visibility = 'hidden';
-    // this.intro.style.visibility = 'hidden';
-    // this.link.style.visibility = 'visible';
-
-    //enable a "Continue?" button
-  }
-
-  @HostListener('window:resize', ['$event'])
-  onResize(event: { target: { innerWidth: any; }; }) {
-    this.insideHeight = window.innerHeight;
-    this.insideWidth = window.innerWidth;
+    
   }
 }

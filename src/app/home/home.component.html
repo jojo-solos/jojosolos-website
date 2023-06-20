@@ -1,11 +1,17 @@
 <div class="background">
-    <div class="typing-container">
+    <!-- <div class="typing-container">
       <h1 [hidden]="!this.continuePlaying" id="myIntro">toaster goes <span class="auto-type"></span></h1>
       <h1 [hidden]="this.continuePlaying" id="myLink">check me out at twitch.tv/<span class="auto-type-link"></span></h1>
+    </div> -->
+    <div class="buttons">
+      <img width="200px" class="select-button" id="merch-button" src="/assets/merch_button.png" (click)="merchClicked()">
+      <img width="290px" class="select-button" id="game-button" src="/assets/game_button.png" (click)="gameClicked()">
     </div>
     <div class="buttons">
-      <img width="200px" class="select-button" id="merch-button" src="/assets/merch_button.png">
-      <img width="290px" class="select-button" id="game-button" src="/assets/game_button.png">
+      <img width="100px" class="select-button" id="twitch-logo" src="/assets/twitch_logo.png" (click)="mediaClicked('twitch')">
+      <img width="104px" class="select-button" id="youtube-logo" src="/assets/youtube_logo.png" (click)="mediaClicked('youtube')">
+      <img width="104px" class="select-button" id="youtube-vods-logo" src="/assets/youtube_vods_logo.png" (click)="mediaClicked('youtube_vods')">
+      <img width="104px" class="select-button" id="twitter-logo" src="/assets/twitter_logo.png" (click)="mediaClicked('twitter')">
     </div>
   </div>
   

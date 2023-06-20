@@ -1,4 +1,6 @@
 import { Component, HostListener } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 import Typed from 'typed.js';
 
 @Component({
@@ -7,7 +9,6 @@ import Typed from 'typed.js';
   styleUrls: ['./click-game.component.scss']
 })
 export class ClickGameComponent {
-  title = 'jojosolos-website';
   image:any;
   link:any;
   intro:any;
@@ -18,7 +19,7 @@ export class ClickGameComponent {
   clicks:any;
   continuePlaying:Boolean = true;
 
-  constructor() {
+  constructor(private title: Title, private meta: Meta, private router: Router) {
 
   }
 
@@ -34,13 +35,13 @@ export class ClickGameComponent {
     this.insideWidth = window.innerWidth;
 
     this.clicks = 0;
+
+    this.title.setTitle("jojosolos website");
+    this.meta.updateTag({name: "The official jojosolos website, a central landing page where you can find links to anything jojosolos related!", content: "Links to twitch, youtube, merch website and a fun game by jojosolos"});
+  
   }
 
   moveImage() {
-    // if(this.clicks == 10) {
-    //   window.open("https://www.twitch.tv/jojosolos");
-    //   this.stopPlaying();
-    // }
 
     var x = Math.floor(Math.random() * this.insideWidth) - 100;
     var y = Math.floor(Math.random() * this.insideHeight) - 150;
@@ -57,14 +58,12 @@ export class ClickGameComponent {
     this.clicks++;
   }
 
+  backButtonClick() {
+    this.router.navigateByUrl("/home");
+  }
+
   stopPlaying() {
     this.continuePlaying = false;
-
-    this.image.style.visibility = 'hidden';
-    // this.intro.style.visibility = 'hidden';
-    // this.link.style.visibility = 'visible';
-
-    //enable a "Continue?" button
   }
 
   @HostListener('window:resize', ['$event'])
